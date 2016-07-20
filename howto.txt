@@ -1,0 +1,16 @@
+setup your windows installation to use a kms setup key.
+For win 10 pro:
+slmgr.vbs /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
+
+For other versions please see the following links:
+https://technet.microsoft.com/en-us/library/jj612867(v=ws.11).aspx
+https://technet.microsoft.com/en-us/library/ff793406.aspx
+
+Install the kms server to a different machine (important!) from the machine you are activating and run it
+
+	cd kms-server; python server.py
+
+On the client, make sure it uses your server for activating 
+	slmgr.vbs /skms 192.168.1.50:1688
+activate it:
+	slmgr.vbs /ato
